@@ -287,13 +287,13 @@ csv_path = input(
 )
 function_choice = input(
     "Choose a number to select a function:\n"
-    "1) {SOURCE_ONE}\n"
-    "2) {SOURCE_TWO}\n"
-    "3) {SOURCE_THREE}\n"
-    "4) {SOURCE_FOUR}\n"
-    "5) {SOURCE_FIVE}\n"
-    "6) {SOURCE_SIX}\n"
-    "7) {SOURCE_SEVEN}\n"
+    f"1) {SOURCE_ONE}\n"
+    f"2) {SOURCE_TWO}\n"
+    f"3) {SOURCE_THREE}\n"
+    f"4) {SOURCE_FOUR}\n"
+    f"5) {SOURCE_FIVE}\n"
+    f"6) {SOURCE_SIX}\n"
+    f"7) {SOURCE_SEVEN}\n"
     "Selection: "
 )
 
