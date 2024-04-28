@@ -14,7 +14,8 @@ SOURCE_SIX = os.environ.get("SOURCE_SIX")
 SOURCE_SEVEN = os.environ.get("SOURCE_SEVEN")
 DB_NAME = os.environ.get("DB_NAME")
 
-# Define standardize column order
+# Define standardize column names and order
+colnames = ['date', 'amount', 'x', 'category', 'description']
 col_order = ['source', 'date', 'description', 'category', 'amount']
 
 # Define source_1 function
@@ -223,7 +224,6 @@ def source_5(csv_path):
 def source_6(csv_path):
 
     # Load data
-    colnames = ['date', 'amount', 'x', 'category', 'description']
     df = pd.read_csv(csv_path, names=colnames)
 
     ## 1. Change category of credit card payments to transfer
@@ -253,7 +253,7 @@ def source_6(csv_path):
 def source_7(csv_path):
 
     # Load data
-    df = pd.read_csv(csv_path)
+    df = pd.read_csv(csv_path, names=colnames)
 
     ## 1. Change date format from mm/dd/yyyy to yyyy-mm-dd
     df['date'] = pd.to_datetime(df['date'])
