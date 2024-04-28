@@ -287,7 +287,7 @@ csv_path = input(
 )
 function_choice = input(
     f"Choose a number to select a function:\n"
-    f"1) {SOURCE_ONE}/n"
+    f"1) {SOURCE_ONE}\n"
     f"2) {SOURCE_TWO}\n"
     f"3) {SOURCE_THREE}\n"
     f"4) {SOURCE_FOUR}\n"
