@@ -224,7 +224,7 @@ def source_6(csv_path):
 
     # Load data
     colnames = ['date', 'amount', 'x', 'category', 'description']
-    df = pd.read_csv(csv_path)
+    df = pd.read_csv(csv_path, names=colnames)
 
     ## 1. Change category of credit card payments to transfer
     df = df.astype({'category': str})
