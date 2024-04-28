@@ -281,8 +281,21 @@ def insert_into_db(df, table_name):
     conn.close()
 
 # Prompt for CSV path and function choice
-csv_path = input("Enter the full path to the CSV file:\nPath: ")
-function_choice = input("Choose a number to select a function:\n1) {SOURCE_ONE}\n2) {SOURCE_TWO}\n3) {SOURCE_THREE}\n4) {SOURCE_FOUR}\n5) {SOURCE_FIVE}\n6) {SOURCE_SIX}\n7) {SOURCE_SEVEN}\nSelection: ")
+csv_path = input(
+    "Enter the full path to the CSV file:\n"
+    "Path: "
+)
+function_choice = input(
+    "Choose a number to select a function:\n"
+    "1) {SOURCE_ONE}\n"
+    "2) {SOURCE_TWO}\n"
+    "3) {SOURCE_THREE}\n"
+    "4) {SOURCE_FOUR}\n"
+    "5) {SOURCE_FIVE}\n"
+    "6) {SOURCE_SIX}\n"
+    "7) {SOURCE_SEVEN}\n"
+    "Selection: "
+)
 
 # Call the selected function based on received input
 if function_choice == '1':
@@ -303,5 +316,8 @@ else:
     print("Invalid choice. Rerun program and try again.")
 
 # Insert data into SQLite3 database
-table_name = input("Enter the database's table name to insert into:\nTable: ")
+table_name = input(
+    "Enter the database's table name to insert into:\n"
+    "Table: "
+)
 insert_into_db(df, table_name)
