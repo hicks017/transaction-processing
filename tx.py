@@ -52,7 +52,7 @@ def source_1(csv_path):
     df.insert(0, 'source', SOURCE_ONE)
 
     ## 6. Change date format from mm/dd/yyyy to yyyy-mm-dd
-    df['date'] = pd.to_datetime(df['date'])
+    df['date'] = pd.to_datetime(df['date']).dt.date()
 
     # Finish
     return df
@@ -94,7 +94,7 @@ def source_2(csv_path):
     df.insert(0, 'source', SOURCE_TWO)
 
     ## 4. Change date format from mm/dd/yyyy to yyyy-mm-dd
-    df['date'] = pd.to_datetime(df['date'])
+    df['date'] = pd.to_datetime(df['date']).dt.date()
 
     ## 5. Reorder columns
     df = df[col_order]
@@ -198,7 +198,7 @@ def source_5(csv_path):
     df['amount'] = df['amount'].apply(process_target_amount)
 
     ## 5. Change date format from mm/dd/yyyy to yyyy-mm-dd
-    df['date'] = pd.to_datetime(df['date'])
+    df['date'] = pd.to_datetime(df['date']).dt.date()
 
     ## 6. Remove uninterested columns
     df = df.drop(
@@ -236,7 +236,7 @@ def source_6(csv_path):
     df['category'] = df['category'].replace('nan', '')
 
     ## 2. Change date format from mm/dd/yyyy to yyyy-mm-dd
-    df['date'] = pd.to_datetime(df['date'])
+    df['date'] = pd.to_datetime(df['date']).dt.date()
 
     ## 3. Insert source of data to first column
     df.insert(0, 'source', SOURCE_SIX)
@@ -256,7 +256,7 @@ def source_7(csv_path):
     df = pd.read_csv(csv_path, names=colnames)
 
     ## 1. Change date format from mm/dd/yyyy to yyyy-mm-dd
-    df['date'] = pd.to_datetime(df['date'])
+    df['date'] = pd.to_datetime(df['date']).dt.date()
 
     ## 2. Insert source of data to first column
     df.insert(0, 'source', SOURCE_SEVEN)
