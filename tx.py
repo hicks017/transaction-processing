@@ -189,7 +189,7 @@ def source_5(csv_path):
 
     ## 4. Edit debit/credit format from x/(x) to x/-x and remove dollar sign
     def process_amount(amount):
-        amount = amount.str.replace('$', '')
+        amount = str(amount).replace('$', '')
         if '(' in amount:
             return amount.strip('()')
         else:
