@@ -188,14 +188,14 @@ def source_5(csv_path):
     df.insert(0, 'source', SOURCE_FIVE)
 
     ## 4. Edit debit/credit format from x/(x) to x/-x and remove dollar sign
-    def process_target_amount(amount):
-        amount = amount.replace('$', '')
+    def process_amount(amount):
+        amount = amount.str.replace('$', '')
         if '(' in amount:
             return amount.strip('()')
         else:
             return '-' + amount
     
-    df['amount'] = df['amount'].apply(process_target_amount)
+    df['amount'] = df['amount'].apply(process_amount)
 
     ## 5. Change date format from mm/dd/yyyy to yyyy-mm-dd
     df['date'] = pd.to_datetime(df['date']).dt.date
